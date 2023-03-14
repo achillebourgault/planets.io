@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}
+				Basic Site Template
+			{% endblock title %}
+		</title>
+		<link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+	</head>
+	<body>
+
+	<div class="navbar">
+		<a href="/" class="navlogo"><b>planets</b>.io</a>
+		<div class="nav-links">
+			{% for page in page_list %}
+			<a class="{% if 'Home' == page.title %}inactive{% else %}link{% endif %}" href="{{ page.permalink }}">{{ page.title }}</a>
+			{% endfor %}
+		</div>
+	</div>
+
+	<section id="main">
+		{% block main_content %}
+		<h1>{{ title }}</h1>
+		{% autoescape off %}
+		{% endautoescape %}
+		{% endblock main_content %}
+	</section>
+	<div class="authors">
+		{% block footer %}
+		<p>{{last_updated}}</p>
+		{% endblock footer %}
+	</div>
+	</body>
+</html>

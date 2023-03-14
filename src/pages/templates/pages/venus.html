@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+	planets.io | {{ title }}
+{% endblock title %}
+
+{% block main_content %}
+	{% autoescape off %}
+<div class="planet-img-section-wrapper">
+	<div class="planet-img-section">
+		<img class="planet-img animate-fade" src="/static/venus.png" alt=""/>
+	</div>
+</div>
+	<div class="content">
+		<p>{{ content }}</p>
+	</div>
+	{% endautoescape %}
+
+<div class="content-planet">
+	<img src="/static/venus.png" alt=""/>
+</div>
+{% endblock main_content %}
+
+{% block footer %}
+<p>Copyright &copy; 2023 planets.io <span>Designed by <a href="https://github.com/achillebourgault">Achille Bourgault</a> </span></p>
+{% endblock footer %}
