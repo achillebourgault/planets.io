@@ -14,6 +14,10 @@ python3 manage.py runserver
 ```
 ## Demo
 
+<p align="center">
+
 ![](/assets/homepage.gif)
 ![](/assets/planet.gif)
+
+</p>
 
